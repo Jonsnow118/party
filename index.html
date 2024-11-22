@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kế hoạch hẹn hò lãng mạn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transform: translateY(20px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        h1 {
+            color: #FF1493; /* Pink color */
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #FF6B6B;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4ECDC4;
+            }
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .event {
+            padding: 20px;
+            margin: 20px 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .event::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .event:hover::before {
+            transform: scaleY(1);
+        }
+
+        .time {
+            font-weight: bold;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .notes {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(254, 249, 231, 0.9);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .notes:hover {
+            transform: scale(1.02);
+        }
+
+        .notes h2 {
+            color: #d35400;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .notes ul {
+            list-style-type: none;
+        }
+
+        .notes li {
+            margin: 15px 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .notes li:hover {
+            transform: translateX(10px);
+            color: #333;
+        }
+
+        .notes li:before {
+            content: "❤️";
+            margin-right: 10px;
+            font-size: 1.2em;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .time {
+                font-size: 1em;
+            }
+
+            .event:hover {
+                transform: translateX(5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kế Hoạch Hẹn Hò Cùng Với Em</h1>
+        
+        <div class="timeline">
+            <div class="event">
+                <div class="time">18:00</div>
+                <div class="description">
+                    Đón người yêu tại nhà 🌹
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="time">18:30 - 19:30</div>
+                <div class="description">
+                    Dùng bữa tối tại Dong GoGi TTTM  🍝
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="time">19:45 - 20:30</div>
+                <div class="description">
+                    Dạo phố đi bộ, thưởng thức kem và chụp ảnh cùng nhau 📸
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="time">20:30 - 21:30</div>
+                <div class="description">
+                    Đi hát karaoke
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="time">21:30 - 22:00</div>
+                <div class="description">
+                    Đưa người yêu về nhà an toàn, kết thúc buổi hẹn hò ngọt ngào 🚗
+                </div>
+            </div>
+        </div>
+
+        <div class="notes">
+            <h2>✨ Lưu ý đặc biệt ✨</h2>
+            <ul>
+                <li>Đặt bàn trước tại nhà hàng để tránh phải chờ đợi</li>
+                <li>Kiểm tra thời tiết trước để chuẩn bị dù/áo khoác nếu cần</li>
+                <li>Sạc đầy pin điện thoại để chụp ảnh đẹp</li>
+                <li>Chuẩn bị một món quà nhỏ bất ngờ</li>
+                <li>Luôn giữ nụ cười và thái độ vui vẻ</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
